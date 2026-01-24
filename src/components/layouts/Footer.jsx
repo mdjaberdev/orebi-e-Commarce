@@ -7,10 +7,11 @@ import Logo from "/src/assets/logo.png";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
+import ScrollToTop from "react-scroll-to-top";
 
 const Footer = () => {
   return (
-    <div className="mt-20 mb-14">
+    <div className="mt-20 mb-30">
       <Container>
         <Flex className={" items-start"}>
           <div className="w-[15%]">
@@ -138,6 +139,16 @@ const Footer = () => {
           </div>
         </Flex>
       </Container>
+      <div className="-mt-30">
+        <ScrollToTop
+          smooth
+          top="500"
+          height="20"
+          width="20"
+          color="white"
+          className="bg-green-500! h-15! w-15! flex! -ml-50!  items-center! justify-center!  rounded-full!"
+        />
+      </div>
     </div>
   );
 };

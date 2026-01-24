@@ -12,6 +12,7 @@ const Ourbestsallers = () => {
   useEffect(() => {
     async function alldatas() {
       let data = await axios.get("https://dummyjson.com/products");
+      // console.log(data.data.products);
       setalldata(data.data.products);
     }
     alldatas();
@@ -25,7 +26,7 @@ const Ourbestsallers = () => {
           as={"h3"}
         />
         <Flex  className="mt-5">
-            {alldata.slice(16,20).map((item) => (
+            {alldata.slice(10,14).map((item) => (
           <div className="w-1/4 px-2.5">
               <Product
                 badgeText={"New"}

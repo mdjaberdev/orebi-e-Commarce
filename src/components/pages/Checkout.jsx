@@ -1,6 +1,7 @@
-import React from 'react'
-import Container from '../Container';
-import Heading from '../Heading';
+
+import Container from "../Container";
+import Heading from "../Heading";
+
 
 const Checkout = () => {
   return (
@@ -270,6 +271,6 @@ const Checkout = () => {
       </button>
     </Container>
   );
-}
+};
 
-export default Checkout
+export default Checkout;
