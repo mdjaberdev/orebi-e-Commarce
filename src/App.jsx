@@ -13,29 +13,32 @@ import Error from './components/pages/Error'
 import ProductsInside from './components/pages/ProductsInside'
 import Login from './components/pages/Login'
 import Singup from './components/pages/Singup'
+import ReactLenis from 'lenis/react'
 
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<RootLayouts />}>
-        <Route index element={<Home />} />
-        <Route index element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/products_inside" element={<ProductsInside />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/singup" element={<Singup />} />
-        <Route path="/myaccount" element={<Myaccount />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="*" element={<Error />} />
-      </Route>
-    </Routes>
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
+      <Routes>
+        <Route path="/" element={<RootLayouts />}>
+          <Route index element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/products_inside" element={<ProductsInside />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/singup" element={<Singup />} />
+          <Route path="/myaccount" element={<Myaccount />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="*" element={<Error />} />
+        </Route>
+      </Routes>
+    </ReactLenis>
   );
 }
 

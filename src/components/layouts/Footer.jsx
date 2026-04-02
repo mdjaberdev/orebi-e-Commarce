@@ -1,17 +1,40 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Container from "../Container";
 import Flex from "../Flex";
 import Heading from "../Heading";
 import Images from "../Images";
 import Logo from "/src/assets/logo.png";
-import { FaFacebookF } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaArrowUp } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
-import ScrollToTop from "react-scroll-to-top";
+import { useLenis } from "lenis/react";
 
 const Footer = () => {
+  const lenis = useLenis();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 500) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const handleScrollToTop = () => {
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.2 });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="mt-20 mb-30">
+    <section className="mt-20 mb-5 relative">
       <Container>
         <Flex className={" items-start"}>
           <div className="w-[15%]">
@@ -139,17 +162,19 @@ const Footer = () => {
           </div>
         </Flex>
       </Container>
-      <div className="-mt-30">
-        <ScrollToTop
-          smooth
-          top="500"
-          height="20"
-          width="20"
-          color="white"
-          className="bg-green-500! h-15! w-15! flex! -ml-50!  items-center! justify-center!  rounded-full!"
-        />
-      </div>
-    </div>
+
+      {/* bottom to top button */}
+      {isVisible && (
+        <div className="fixed bottom-10 right-10 z-50">
+          <button
+            onClick={handleScrollToTop}
+            className="bg-black h-12 w-12 flex items-center justify-center rounded-full cursor-pointer transition-colors duration-300 shadow-lg border-none outline-none"
+          >
+            <FaArrowUp className="text-white text-lg" />
+          </button>
+        </div>
+      )}
+    </section>
   );
 };
 
