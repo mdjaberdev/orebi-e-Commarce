@@ -3,24 +3,36 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 const Banner = () => {
-  var settings = {
+  const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     speed: 3000,
     autoplaySpeed: 3000,
   };
+
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden w-full">
       <Slider {...settings}>
         <Link to={"/products_inside"}>
-          <div className="bg-[url('/src/assets/banner.png')] py-[250px] bg-no-repeat bg-cover bg-center"></div>
+          <div className="relative w-full">
+            <img
+              src="/src/assets/banner.png"
+              alt="Banner"
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </Link>
         <Link to={"/products_inside"}>
-          <div className="bg-[url('/src/assets/banner.png')]  py-[250px] bg-no-repeat bg-cover bg-center"></div>
+          <div className="relative w-full">
+            <img
+              src="/src/assets/banner.png"
+              alt="Banner"
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </Link>
       </Slider>
     </div>
