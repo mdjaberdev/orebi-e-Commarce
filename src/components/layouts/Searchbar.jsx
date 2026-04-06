@@ -13,7 +13,7 @@ const Sharcebar = () => {
   return (
     <section className="bg-[#F5F5F3] border-y border-[#979797] py-4 px-3 lg:px-0">
       <Container>
-        <Flex className="justify-between flex-wrap gap-y-4 md:gap-y-0">
+        <Flex className="justify-between flex-col lg:flex-row gap-y-3">
           {/* Shop by Category */}
           <div className="flex items-center relative">
             <div

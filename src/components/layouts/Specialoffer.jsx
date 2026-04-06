@@ -11,15 +11,15 @@ import Badge from '../Badge';
 
 const Specialoffer = () => {
   return (
-    <div className="py-5">
+    <div className="py-5 px-3 lg:px-0">
       <Container>
         <Heading
           className={"text-primary text-[39px] font-dmSans font-bold"}
           text={"Special Offers"}
           as={"h3"}
         />
-        <Flex className={"gap-x-5 mt-5"}>
-          <div className="h-1/4 relative">
+        <Flex className={"gap-x-5 mt-5 flex-col lg:flex-row gap-y-5"}>
+          <div className="h-1/4 relative w-full">
             <Product
               productImg={specialOne}
               badgeText={"New"}
@@ -28,7 +28,7 @@ const Specialoffer = () => {
             />
             <Badge className={"absolute top-3 left-3"} badgeText={"New"} />
           </div>
-          <div className="h-1/4 relative">
+          <div className="h-1/4 relative w-full">
             <Product
               productImg={specialTwo}
               badgeText={"New"}
@@ -37,7 +37,7 @@ const Specialoffer = () => {
             />
             {/* <Badge className={"absolute top-3 left-3"} badgeText={"New"} /> */}
           </div>
-          <div className="h-1/4 relative">
+          <div className="h-1/4 relative w-full">
             <Product
               productImg={specialThree}
               badgeText={"New"}
@@ -46,7 +46,7 @@ const Specialoffer = () => {
             />
             <Badge className={"absolute top-3 left-3"} badgeText={"New"} />
           </div>
-          <div className="h-1/4 relative">
+          <div className="h-1/4 relative w-full">
             <Product
               productImg={specialFour}
               badgeText={"New"}

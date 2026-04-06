@@ -10,7 +10,7 @@ const Phoneoftheyear = () => {
     navigate("/products_inside");
   };
   return (
-    <div className="py-10">
+    <div className="lg:py-10">
       <Container>
         <div className="cursor-pointer" onClick={handelClick}>
           <Images srcImg={phoneoftheyear} />

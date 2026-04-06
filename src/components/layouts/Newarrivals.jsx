@@ -1,7 +1,6 @@
 import React from "react";
 import Heading from "../Heading";
 import Container from "../Container";
-import Flex from "../Flex";
 import Product from "../Product";
 import productOne from "/src/assets/productOne.png";
 import productTwo from "/src/assets/productTwo.png";
@@ -12,8 +11,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import NextArrow from "../NextArrow";
 import PrevArrow from "../PrevArrow";
-
-
 
 const Newarrivals = () => {
   var settings = {
@@ -26,57 +23,80 @@ const Newarrivals = () => {
     autoplaySpeed: 1500,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+
+    responsive: [
+      {
+        breakpoint: 1024, // laptop
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768, // tablet
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480, // mobile
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          autoplay: false,
+        },
+      },
+    ],
   };
+
   return (
-    <div className="pb-9">
+    <div className="pb-9 px-3 lg:px-0">
       <Container>
         <Heading
           className={"text-primary text-[39px] font-dmSans font-bold"}
           text={"New Arrivals"}
           as={"h3"}
         />
+
         <div className="-mx-2.5 mt-5">
           <Slider {...settings}>
-            <div className="w-1/4 relative px-2.5">
+            <div className="relative px-2.5">
               <Product
                 productImg={productOne}
-                badgeText={"New"}
                 productTitle={"Round Table Clock"}
                 productPrice={"$40.00"}
               />
               <Badge className={"absolute top-3 left-5.5"} badgeText={"New"} />
             </div>
-            <div className="w-1/4 relative px-2.5">
+
+            <div className="relative px-2.5">
               <Product
                 productImg={productTwo}
-                badgeText={"New"}
                 productTitle={"Smart Watch"}
                 productPrice={"$44.00"}
               />
-              {/* <Badge className={"absolute top-3 left-3"} badgeText={"New"} /> */}
             </div>
-            <div className="w-1/4 relative px-2.5">
+
+            <div className="relative px-2.5">
               <Product
                 productImg={productThree}
-                badgeText={"New"}
                 productTitle={"Cloth Basket"}
                 productPrice={"$48.00"}
               />
               <Badge className={"absolute top-3 left-5.5"} badgeText={"New"} />
             </div>
-            <div className="w-1/4 relative px-2.5">
+
+            <div className="relative px-2.5">
               <Product
                 productImg={productFour}
-                badgeText={"New"}
                 productTitle={"Funny toys for babies"}
                 productPrice={"$55.00"}
               />
               <Badge className={"absolute top-3 left-5.5"} badgeText={"New"} />
             </div>
-            <div className="w-1/4 relative px-2.5">
+
+            <div className="relative px-2.5">
               <Product
                 productImg={productTwo}
-                badgeText={"New"}
                 productTitle={"Smart Watch"}
                 productPrice={"$44.00"}
               />

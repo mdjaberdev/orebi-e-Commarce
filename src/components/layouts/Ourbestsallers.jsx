@@ -18,16 +18,16 @@ const Ourbestsallers = () => {
     alldatas();
   });
   return (
-    <div className="py-16">
+    <div className="lg:py-16 px-4 lg:px-0">
       <Container>
         <Heading
           className={"text-primary text-[39px] font-dmSans font-bold"}
           text={"Our Bestsellers"}
           as={"h3"}
         />
-        <Flex  className="mt-5">
+        <Flex  className="mt-5 flex-wrap">
             {alldata.slice(10,14).map((item) => (
-          <div className="w-1/4 px-2.5">
+          <div className="w-full sm:w-1/2 lg:w-1/4 px-2.5 mb-5 lg:mb-0">
               <Product
                 badgeText={"New"}
                 productImg={item.thumbnail}

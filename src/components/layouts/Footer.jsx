@@ -34,10 +34,10 @@ const Footer = () => {
   };
 
   return (
-    <section className="mt-20 mb-5 relative">
+    <section className="mt-6 lg:mt-20 mb-5 relative px-3 lg:px-0">
       <Container>
-        <Flex className={" items-start"}>
-          <div className="w-[15%]">
+        <Flex className={" items-start flex-col lg:flex-row gap-y-5"}>
+          <div className="lg:w-[15%]">
             <Heading
               className={"text-base font-bold font-dmSans text-primaryColor"}
               text={"MENU"}
@@ -61,7 +61,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="w-[15%]">
+          <div className="lg:w-[15%]">
             <Heading
               className={"text-base font-bold font-dmSans text-primaryColor"}
               text={"SHOP"}
@@ -75,7 +75,7 @@ const Footer = () => {
               <li className="py-1.5">Category 5</li>
             </ul>
           </div>
-          <div className="w-[20%]">
+          <div className="lg:w-[20%]">
             <Heading
               className={"text-base font-bold font-dmSans text-primaryColor"}
               text={"HELP"}
@@ -89,7 +89,7 @@ const Footer = () => {
               <li className="py-1.5"> Secure Payments</li>
             </ul>
           </div>
-          <div className="w-[30%]">
+          <div className="lg:w-[30%]">
             <Heading
               className={"text-base font-bold font-dmSans text-primaryColor"}
               text={"(052) 611-5711"}
@@ -114,7 +114,7 @@ const Footer = () => {
             </Link>
           </div>
         </Flex>
-        <Flex className={"justify-between mt-10"}>
+        <Flex className={"justify-between flex-col lg:flex-row mt-10"}>
           <div className="flex gap-x-4">
             <div className="relative group ">
               <Link>

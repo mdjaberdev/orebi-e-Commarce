@@ -28,9 +28,9 @@ const Product = ({ productImg, badgeText, productTitle, productPrice }) => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center h-18.75 py-4 px-2">
+      <div className="flex justify-between  h-18.75 py-4 px-2">
         <h4 className="font-bold text-[20px] text-[#262626]">{productTitle}</h4>
-        <p className="text-base text-[#767676]">{productPrice}</p>
+        <p className="text-base text-[#767676] pt-1">{productPrice}</p>
       </div>
       <p className="text-base text-[#767676] px-2">Black</p>
     </div>
