@@ -5,6 +5,7 @@ import Heading from "../Heading";
 import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Searchfilter from "../searchfilter";
 
 const Sharcebar = () => {
   const [show, setShow] = useState(false);
@@ -61,14 +62,7 @@ const Sharcebar = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="flex-1 md:flex-none py-2 px-3 bg-[#FFF] rounded-[15px] flex items-center w-full md:w-[400px] justify-between">
-            <input
-              className="outline-0 w-full md:w-auto"
-              type="text"
-              placeholder="Search Products"
-            />
-            <FaSearch className="ml-2" />
-          </div>
+          {/* <Searchfilter /> */}
 
           {/* User & Cart */}
           <div className="flex gap-x-5 items-center relative">

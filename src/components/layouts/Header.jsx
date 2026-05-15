@@ -22,7 +22,7 @@ const Header = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex w-[60%]">
+            <div className="hidden md:flex ">
               <ul className="flex items-center gap-x-5 text-[#767676] text-sm font-dmSans">
                 <li className="hover:text-primary hover:font-bold duration-300">
                   <Link to={"/"}>Home</Link>

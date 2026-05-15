@@ -1,0 +1,50 @@
+.swiper-pagination {
+    position: absolute !important;
+    bottom: 50% !important;
+    transform: translateY(50%) !important;
+    left: 80px !important;
+    z-index: 20;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+}
+
+.swiper-pagination-bullet {
+    background: transparent !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    cursor: pointer;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    column-gap: 8px;
+}
+
+.bullet-num {
+    display: inline-block !important;
+    width: 25px !important;
+    font-size: 16px;
+    font-weight: 500;
+    color: transparent !important;
+    transition: all 0.3s ease;
+    font-size: 18px;
+
+}
+
+.bullet-line {
+    display: inline-block;
+    width: 2px;
+    height: 35px;
+    background-color: white !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active .bullet-num {
+    color: #000000 !important;
+}
+
+.swiper-pagination-bullet-active .bullet-line {
+    background-color: #000000 !important;
+}
