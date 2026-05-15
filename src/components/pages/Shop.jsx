@@ -88,6 +88,61 @@ const Shop = () => {
                   </li>
                 </ul>
               </div>
+              {/* Shop by Brand  */}
+              <div className="mt-[50px]">
+                <div className="flex items-center justify-between">
+                  <Heading
+                    className="text-[#262626] text-xl font-bold font-dmSans"
+                    text={"Shop by Brand"}
+                    as={"h4"}
+                  />
+                  <FaCaretUp />
+                </div>
+                <ul className="text-[#767676] text-base font-dmSans mt-[35px] ">
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    Brand 1
+                  </li>
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    Brand 2
+                  </li>
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    Brand 3
+                  </li>
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    Brand 4
+                  </li>
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    Brand 5
+                  </li>
+                </ul>
+              </div>
+              {/* Shop by Price  */}
+              <div className="mt-[50px]">
+                <div className="">
+                  <Heading
+                    className="text-[#262626] text-xl font-bold font-dmSans"
+                    text={"Shop by Price"}
+                    as={"h4"}
+                  />
+                </div>
+                <ul className="text-[#767676] text-base font-dmSans mt-[35px] ">
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    $0.00 - $9.99
+                  </li>
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    $10.00 - $19.99
+                  </li>
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    $20.00 - $29.99
+                  </li>
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                    $30.00 - $39.99
+                  </li>
+                  <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
+                $40.00 - $69.99
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className="">
@@ -112,7 +167,7 @@ const Shop = () => {
                 </div>
               </div>
             </div>
-           <Pagination itemsPerPage={12}/>
+            <Pagination itemsPerPage={12} />
           </div>
         </div>
       </Container>

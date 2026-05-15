@@ -6,7 +6,7 @@ import Product from "./Product";
 // ITEMS COMPONENT
 function Items({ currentItems }) {
   return (
-    <div className="grid grid-cols-3 gap-5 mt-10">
+    <div className="grid grid-cols-3 gap-5 mt-[60px]">
       {currentItems.map((item) => (
         <div key={item.id} className="w-full ">
           <Product
@@ -65,7 +65,7 @@ function Pagination({ itemsPerPage }) {
       <Items currentItems={currentItems} />
 
       {/* PAGINATION */}
-      <div className="mt-20 flex items-center justify-between">
+      <div className="mt-12.5 flex items-center justify-between">
         <ReactPaginate
           breakLabel="..."
           nextLabel=""
