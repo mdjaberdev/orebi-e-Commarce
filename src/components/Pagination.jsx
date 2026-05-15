@@ -1,67 +1,90 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import ReactPaginate from "react-paginate";
-import data from "../data";
+import axios from "axios";
 import Product from "./Product";
 
+// ITEMS COMPONENT
 function Items({ currentItems }) {
   return (
-    <>
-      <div className="grid grid-cols-3 gap-x-7.5 justify-between mt-10">
-        {currentItems &&
-          currentItems.map((item) => (
-            <div>
-              <h3>
-                <Product
-                  productTitle={item.title}
-                  productImg={item.image}
-                  productPrice={item.price}
-                />
-              </h3>
-            </div>
-          ))}
-      </div>
-    </>
+    <div className="grid grid-cols-3 gap-5 mt-10">
+      {currentItems.map((item) => (
+        <div key={item.id} className="w-full ">
+          <Product
+            badgeText={"New"}
+            productImg={item.thumbnail}
+            productTitle={item.title}
+            productPrice={item.price}
+          />
+        </div>
+      ))}
+    </div>
   );
 }
 
+// PAGINATION COMPONENT
 function Pagination({ itemsPerPage }) {
-  // let [allData, set]
+  const [allData, setAllData] = useState([]);
   const [itemOffset, setItemOffset] = useState(0);
 
-  const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = data.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  // API CALL
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        let data = await axios.get("https://dummyjson.com/products");
+        setAllData([
+          ...data.data.products,
+          ...data.data.products,
+          ...data.data.products,
+          ...data.data.products,
+        ]);
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
+    fetchData();
+  }, []);
+
+  // PAGINATION LOGIC
+  const endOffset = itemOffset + itemsPerPage;
+
+  const currentItems = allData.slice(itemOffset, endOffset);
+
+  const pageCount = Math.ceil(allData.length / itemsPerPage);
+
+  // PAGE CHANGE
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % data.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`,
-    );
+    const newOffset = (event.selected * itemsPerPage) % allData.length;
+
     setItemOffset(newOffset);
   };
- 
+
   return (
     <>
+      {/* PRODUCTS */}
       <Items currentItems={currentItems} />
+
+      {/* PAGINATION */}
       <div className="mt-20 flex items-center justify-between">
         <ReactPaginate
           breakLabel="..."
           nextLabel=""
+          previousLabel=""
           onPageChange={handlePageClick}
           pageRangeDisplayed={4}
           marginPagesDisplayed={1}
           pageCount={pageCount}
-          previousLabel=""
           renderOnZeroPageCount={null}
           containerClassName="flex gap-x-5"
-          pageLinkClassName={" "}
-          activeClassName="bg-[#000000] h-8 w-10 flex items-center justify-center text-white"
+          pageClassName="border px-3 py-1"
+          activeClassName="bg-black text-white"
         />
+
+        {/* PRODUCT COUNT */}
         <h4>
-          Products from {itemOffset + 1} to
-          {endOffset < data.length ? endOffset : data.length} of {data.length}
+          Products from {itemOffset + 1} to{" "}
+          {endOffset < allData.length ? endOffset : allData.length} of{" "}
+          {allData.length}
         </h4>
       </div>
     </>

@@ -16,7 +16,7 @@ const Ourbestsallers = () => {
       setalldata(data.data.products);
     }
     alldatas();
-  });
+  },[]);
   return (
     <div className="lg:py-16 px-4 lg:px-0">
       <Container>
