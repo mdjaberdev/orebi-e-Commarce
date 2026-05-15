@@ -62,7 +62,7 @@ const Sharcebar = () => {
           </div>
 
           {/* Search Bar */}
-          {/* <Searchfilter /> */}
+          <Searchfilter />
 
           {/* User & Cart */}
           <div className="flex gap-x-5 items-center relative">
