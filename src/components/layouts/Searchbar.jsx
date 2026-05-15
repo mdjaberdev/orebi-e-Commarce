@@ -5,7 +5,7 @@ import Heading from "../Heading";
 import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Searchfilter from "../searchfilter";
+import Searchfilter from '../Searchfilter'
 
 const Sharcebar = () => {
   const [show, setShow] = useState(false);
