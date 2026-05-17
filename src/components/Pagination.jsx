@@ -3,7 +3,6 @@ import ReactPaginate from "react-paginate";
 import axios from "axios";
 import Product from "./Product";
 
-// ITEMS COMPONENT
 function Items({ currentItems }) {
   return (
     <div className="grid grid-cols-3 gap-5 mt-[60px]">

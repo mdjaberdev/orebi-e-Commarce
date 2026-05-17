@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import Images from "./Images";
+import { Link } from "react-router-dom";
 
 const Searchfilter = () => {
   const [allData, setAllData] = useState([]);
@@ -21,14 +22,13 @@ const Searchfilter = () => {
   }, []);
 
   const getData = (e) => {
-    console.log(e.target.value);
     setData(e.target.value);
   };
   let filterOut = allData.filter((curValue) => {
     return curValue.title.toLowerCase().includes(data);
   });
   return (
-     <div className="">
+    <div className="">
       {" "}
       <div className="flex-1 md:flex-none py-2 px-3 bg-[#FFF] rounded-[15px] flex items-center w-full md:w-[400px] justify-between">
         <input
@@ -36,6 +36,7 @@ const Searchfilter = () => {
           type="text"
           placeholder="Search Products"
           onChange={getData}
+          value={data}
         />
         <FaSearch className="ml-2" />
       </div>
@@ -43,10 +44,20 @@ const Searchfilter = () => {
         {data &&
           filterOut.map((item) => {
             return (
-              <div key={item.id} className="bg-[#F5F5F5] w-[200px] p-2 border border-[#D8D8D8] ">
-                <p>{item.title}</p>
-                <Images className={"w-[100px]"} srcImg={item.thumbnail} />
-              </div>
+              <Link
+                key={item.id}
+                to={"/shop"}
+                state={filterOut}
+                onClick={() => setData("")}
+              >
+                <div className="bg-[#F5F5F5]  p-1 border border-[#D8D8D8] flex items-center justify-between">
+                  <p className="w-[100px] text-primary font-medium">
+                    {item.title}
+                  </p>
+                  <Images className={"w-[90px]"} srcImg={item.thumbnail} />
+                  <p>{item.price}</p>
+                </div>
+              </Link>
             );
           })}
       </div>
