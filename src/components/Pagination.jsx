@@ -5,9 +5,9 @@ import Product from "./Product";
 
 function Items({ currentItems }) {
   return (
-    <div className="grid grid-cols-3 gap-5 mt-[60px]">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-[60px]">
       {currentItems.map((item) => (
-        <div key={item.id} className="w-full ">
+        <div key={item.id} className="">
           <Product
             badgeText={"New"}
             productImg={item.thumbnail}
@@ -29,13 +29,8 @@ function Pagination({ itemsPerPage }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        let data = await axios.get("https://dummyjson.com/products");
-        setAllData([
-          ...data.data.products,
-          ...data.data.products,
-          ...data.data.products,
-          ...data.data.products,
-        ]);
+        let data = await axios.get("https://dummyjson.com/products?limit=120");
+        setAllData(data.data.products);
       } catch (error) {
         console.log(error);
       }
@@ -64,7 +59,7 @@ function Pagination({ itemsPerPage }) {
       <Items currentItems={currentItems} />
 
       {/* PAGINATION */}
-      <div className="mt-12.5 flex items-center justify-between">
+      <div className="mt-12.5 flex flex-col gap-y-3 lg:flex-row items-center justify-between">
         <ReactPaginate
           breakLabel="..."
           nextLabel=""
@@ -80,7 +75,7 @@ function Pagination({ itemsPerPage }) {
         />
 
         {/* PRODUCT COUNT */}
-        <h4>
+        <h4 className="">
           Products from {itemOffset + 1} to{" "}
           {endOffset < allData.length ? endOffset : allData.length} of{" "}
           {allData.length}

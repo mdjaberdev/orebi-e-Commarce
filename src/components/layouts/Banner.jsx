@@ -29,7 +29,7 @@ const Banner = () => {
           renderBullet: function (index, className) {
             const pageNumber = String(index + 1).padStart(2, "0");
             return `
-         <span class="${className}">
+         <span class="${className} ">
         <span class="bullet-num">${pageNumber}</span>
         <span class="bullet-line"></span>
         </span>

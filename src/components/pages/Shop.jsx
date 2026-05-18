@@ -11,7 +11,7 @@ import Pagination from "../Pagination";
 const Shop = () => {
   
   return (
-    <div>
+    <div className="px-3 lg:px-0">
       <Container>
         <div className="mt-[225px] mb-[130px]">
           <Heading
@@ -25,7 +25,7 @@ const Shop = () => {
             as={"h4"}
           />
         </div>
-        <div className="flex items-start gap-x-10  justify-between">
+        <div className="flex flex-col lg:flex-row items-start gap-x-10  justify-between">
           <div className="">
             {/* Shop by Category  */}
             <div className="">
@@ -139,35 +139,38 @@ const Shop = () => {
                     $30.00 - $39.99
                   </li>
                   <li className="border-b border-[#D8D8D8] py-[20px] flex items-center gap-x-2">
-                $40.00 - $69.99
+                    $40.00 - $69.99
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="">
-            <div className="flex gap-x-[100px] justify-between">
+          <div className="w-full">
+            <div className="flex gap-y-3 flex-col mt-2 lg:mt-0 lg:flex-row lg:gap-x-[100px] lg:justify-between">
               {" "}
               <div className="flex gap-x-3 ">
                 <Images srcImg={shopLogo} />
                 <Images srcImg={bar} />
               </div>
-              <div className="flex gap-x-10">
-                <div className="flex gap-x-3 items-center text-[#767676] text-base font-dmSans">
+              <div className="flex  gap-x-10">
+                <div className="flex  gap-x-3 items-center text-[#767676] text-base font-dmSans">
                   <p>Sort by:</p>
-                  <p className="py-[3px] px-[20px] border border-[#F0F0F0] w-[230px] flex justify-between items-center">
+                  <p className="py-[3px] px-[20px] border border-[#F0F0F0] lg:w-[230px] flex justify-between items-center">
                     Featured <FaCaretDown />
                   </p>
                 </div>
-                <div className="flex gap-x-3 items-center text-[#767676] text-base font-dmSans">
+                <div className="flex  gap-x-3 items-center text-[#767676] text-base font-dmSans">
                   <p>Show:</p>
-                  <p className="py-[3px] px-[20px] border border-[#F0F0F0] w-[130px] flex justify-between items-center">
+                  <p className="py-[3px] px-[20px] border border-[#F0F0F0] lg:w-[130px] flex flex-col lg:flex-row justify-between items-center">
                     36 <FaCaretDown />
                   </p>
                 </div>
               </div>
             </div>
-            <Pagination itemsPerPage={12} />
+
+            <div className="">
+              <Pagination itemsPerPage={12} />
+            </div>
           </div>
         </div>
       </Container>

@@ -11,7 +11,7 @@ const Searchfilter = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        let data = await axios.get("https://dummyjson.com/products");
+        let data = await axios.get("https://dummyjson.com/products?limit=180");
         setAllData(data.data.products);
       } catch (error) {
         console.log(error);

@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet-async";
 
 const About = () => {
   return (
-    <>
+    <div className="px-3 lg:px-0">
       <Helmet>
         <title>Orebi About</title>
         <meta name="About" content="welcome to aboutpage" />
@@ -28,8 +28,8 @@ const About = () => {
             as={"h4"}
           />
         </div>
-        <Flex className="justify-between gap-x-6">
-          <div className="w-1/2 relative">
+        <Flex className="justify-between flex-col lg:flex-row gap-x-6">
+          <div className="lg:w-1/2 relative">
             <Images srcImg={aboutOne} className="w-full" />
             <Badge
               className="absolute bottom-15 left-1/2 -translate-x-1/2"
@@ -37,7 +37,7 @@ const About = () => {
             />
           </div>
 
-          <div className="w-1/2 relative">
+          <div className="lg:w-1/2 relative">
             <Images srcImg={aboutTwo} className="w-full" />
             <Badge
               className="absolute bottom-15 left-1/2 -translate-x-1/2 "
@@ -46,13 +46,13 @@ const About = () => {
           </div>
         </Flex>
         <Heading
-          className="mt-5 text-3xl text-primary font-dmSans leading-12"
+          className="mt-5 text-base lg:text-3xl text-primary font-dmSans leading-6 lg:leading-12"
           text={
             " Orebi is one of the worlds leading ecommerce brands and is internationally recognized for celebrating the essence of classic Worldwide cool looking style."
           }
           as={"p"}
         />
-        <Flex className={"gap-x-5 items-start mt-14"}>
+        <Flex className={"gap-x-5 flex-col lg:flex-row items-start mt-2 lg:mt-14"}>
           <div className="">
             <Heading
               className={"text-primary text-2xl font-bold font-dmSans"}
@@ -61,7 +61,7 @@ const About = () => {
             />
             <Heading
               className={
-                "text-[#767676] text-base font-dmSans leading-8 w-[400px]"
+                "text-[#767676] text-base font-dmSans leading-6 lg:leading-8 lg:w-[400px]"
               }
               text={
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an   printer took a galley of type and scrambled it to make a type specimen book."
@@ -77,7 +77,7 @@ const About = () => {
             />
             <Heading
               className={
-                "text-[#767676] text-base font-dmSans leading-8 w-[400px]"
+                "text-[#767676] text-base font-dmSans leading-6 lg:leading-8 lg:w-[400px]"
               }
               text={
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic."
@@ -93,7 +93,7 @@ const About = () => {
             />
             <Heading
               className={
-                "text-[#767676] text-base font-dmSans leading-8 w-[400px]"
+                "text-[#767676] text-base font-dmSans leading-8 lg:w-[400px]"
               }
               text={
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley."
@@ -103,7 +103,7 @@ const About = () => {
           </div>
         </Flex>
       </Container>
-    </>
+    </div>
   );
 };
 
