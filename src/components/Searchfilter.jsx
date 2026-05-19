@@ -25,7 +25,7 @@ const Searchfilter = () => {
     setData(e.target.value);
   };
   let filterOut = allData.filter((curValue) => {
-    return curValue.title.toLowerCase().includes(data);
+    return curValue.title.toLowerCase().includes(data.toLowerCase());
   });
   return (
     <div className="">

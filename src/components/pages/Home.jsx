@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Oribi</title>
+        <title>Orebi Home</title>
         <meta name="description" content="welcome to orebi" />
       </Helmet>
       <Banner />

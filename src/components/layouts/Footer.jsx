@@ -155,7 +155,7 @@ const Footer = () => {
           </div>
           <div className="">
             <Heading
-              className={"text-sm text-[#6D6D6D] font-dmSan pt-2"}
+              className={"text-sm text-[#6D6D6D] text-center lg:text-right font-dmSan py-2"}
               text={"2020 Orebi Minimal eCommerce Figma Template by Adveits"}
               as={"p"}
             />
@@ -165,7 +165,7 @@ const Footer = () => {
 
       {/* bottom to top button */}
       {isVisible && (
-        <div className="fixed bottom-10 right-10 z-50">
+        <div className="fixed hidden lg:block bottom-10 right-10 z-50">
           <button
             onClick={handleScrollToTop}
             className="bg-black h-12 w-12 flex items-center justify-center rounded-full cursor-pointer transition-colors duration-300 shadow-lg border-none outline-none"

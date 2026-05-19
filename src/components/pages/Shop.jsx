@@ -37,7 +37,7 @@ const Shop = () => {
                 />
               </div>
             </div>
-            <div className="w-[375px]">
+            <div className="w-full lg:w-[375px]">
               <ul className="text-[#767676] text-base font-dmSans mt-[35px] ">
                 <li className="border-b border-[#D8D8D8] py-[20px] flex justify-between">
                   Category 1 <span>+</span>
@@ -152,7 +152,7 @@ const Shop = () => {
                 <Images srcImg={shopLogo} />
                 <Images srcImg={bar} />
               </div>
-              <div className="flex  gap-x-10">
+              <div className="flex flex-col lg:flex-row gap-y-2 gap-x-10">
                 <div className="flex  gap-x-3 items-center text-[#767676] text-base font-dmSans">
                   <p>Sort by:</p>
                   <p className="py-[3px] px-[20px] border border-[#F0F0F0] lg:w-[230px] flex justify-between items-center">
