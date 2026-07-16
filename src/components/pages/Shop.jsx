@@ -11,9 +11,9 @@ import Pagination from "../Pagination";
 const Shop = () => {
   
   return (
-    <div className="px-3 lg:px-0">
+    <div className="">
       <Container>
-        <div className="mt-[225px] mb-[130px]">
+        <div className="mt-24 sm:mt-32 lg:mt-56.25 mb-12 sm:mb-20 lg:mb-32.5">
           <Heading
             className="text-primary text-5xl font-bold font-dmSans"
             text={"Products"}

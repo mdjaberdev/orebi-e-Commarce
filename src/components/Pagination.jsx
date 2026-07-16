@@ -5,7 +5,7 @@ import Product from "./Product";
 
 function Items({ currentItems }) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-[60px]">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-[60px]">
       {currentItems.map((item) => (
         <div key={item.id} className="">
           <Product
@@ -69,7 +69,7 @@ function Pagination({ itemsPerPage }) {
           marginPagesDisplayed={1}
           pageCount={pageCount}
           renderOnZeroPageCount={null}
-          containerClassName="flex gap-x-5"
+          containerClassName="flex flex-wrap gap-3 justify-center lg:justify-start"
           pageClassName="border px-3 py-1"
           activeClassName="bg-black text-white"
         />

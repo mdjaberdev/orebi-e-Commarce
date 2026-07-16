@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "../Container";
 import Heading from "../Heading";
-import Flex from "../Flex";
 import Product from "../Product";
 import specialOne from "/src/assets/specialofferOne.png";
 import specialTwo from "/src/assets/specialofferTwo.png";
@@ -19,8 +18,8 @@ const Specialoffer = () => {
           as="h3"
         />
 
-        <Flex className="gap-x-5 mt-5 flex-col md:flex-row md:flex-wrap lg:flex-row gap-y-5">
-          <div className="h-1/4 relative w-full md:w-[48%] lg:w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
+          <div className="relative">
             <Product
               productImg={specialOne}
               badgeText="New"
@@ -30,7 +29,7 @@ const Specialoffer = () => {
             <Badge className="absolute top-3 left-3" badgeText="New" />
           </div>
 
-          <div className="h-1/4 relative w-full md:w-[48%] lg:w-full">
+          <div className="relative">
             <Product
               productImg={specialTwo}
               badgeText="New"
@@ -39,7 +38,7 @@ const Specialoffer = () => {
             />
           </div>
 
-          <div className="h-1/4 relative w-full md:w-[48%] lg:w-full">
+          <div className="relative">
             <Product
               productImg={specialThree}
               badgeText="New"
@@ -49,7 +48,7 @@ const Specialoffer = () => {
             <Badge className="absolute top-3 left-3" badgeText="New" />
           </div>
 
-          <div className="h-1/4 relative w-full md:w-[48%] lg:w-full">
+          <div className="relative">
             <Product
               productImg={specialFour}
               badgeText="New"
@@ -58,7 +57,7 @@ const Specialoffer = () => {
             />
             <Badge className="absolute top-3 left-3" badgeText="New" />
           </div>
-        </Flex>
+        </div>
       </Container>
     </div>
   );
