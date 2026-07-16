@@ -5,18 +5,18 @@ import Heading from "../Heading";
 import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Searchfilter from '../Searchfilter'
+import Searchfilter from "../Searchfilter";
 
 const Sharcebar = () => {
   const [show, setShow] = useState(false);
   const [showl, setShowl] = useState(false);
 
   return (
-    <section className="bg-[#F5F5F3] border-y border-[#979797] py-4 px-3 lg:px-0">
+    <section className="bg-[#F5F5F3] border-y border-[#979797] py-4">
       <Container>
         <Flex className="justify-between flex-col lg:flex-row gap-y-3">
           {/* Shop by Category */}
-          <div className="flex items-center relative">
+          <div className="flex items-center relative w-full lg:w-auto">
             <div
               className="flex gap-x-1.5 items-center cursor-pointer"
               onClick={() => setShow(!show)}
@@ -32,7 +32,7 @@ const Sharcebar = () => {
             {/* Overlay */}
             {show && (
               <div
-                className="fixed inset-0 z-10"
+                className="fixed inset-0 z-60"
                 onClick={() => setShow(false)}
               ></div>
             )}
@@ -62,11 +62,12 @@ const Sharcebar = () => {
           </div>
 
           {/* Search Bar */}
-          <Searchfilter />
+          <div className="w-full lg:w-auto">
+            <Searchfilter />
+          </div>
 
-          {/* User & Cart */}
-          <div className="flex gap-x-5 items-center relative">
-            {/* User Dropdown */}
+          <div className="flex gap-x-5 items-center relative w-full lg:w-auto justify-end lg:justify-start">
+          
             <div className="flex gap-x-1 relative">
               <div
                 className="flex items-center cursor-pointer"
@@ -78,7 +79,7 @@ const Sharcebar = () => {
 
               {showl && (
                 <div
-                  className="fixed inset-0 z-10"
+                  className="fixed inset-0 z-60"
                   onClick={() => setShowl(false)}
                 ></div>
               )}
@@ -91,11 +92,13 @@ const Sharcebar = () => {
                         My Account
                       </li>
                     </Link>
+
                     <Link to="/login">
                       <li className="bg-[#2B2B2B] text-white py-2 text-center w-[200px] hover:bg-transparent hover:text-black duration-300">
                         Login
                       </li>
                     </Link>
+
                     <Link to="/singup">
                       <li className="bg-[#2B2B2B] text-white py-2 text-center w-[200px] hover:bg-transparent hover:text-black duration-300">
                         Sign Up

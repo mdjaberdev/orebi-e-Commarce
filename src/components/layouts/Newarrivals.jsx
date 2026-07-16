@@ -49,7 +49,7 @@ const Newarrivals = () => {
   };
 
   return (
-    <div className="pb-9 px-3 lg:px-0">
+    <div className="pb-9">
       <Container>
         <Heading
           className={"text-primary text-[39px] font-dmSans font-bold"}
