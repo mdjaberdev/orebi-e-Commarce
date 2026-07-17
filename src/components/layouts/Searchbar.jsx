@@ -39,7 +39,7 @@ const Sharcebar = () => {
 
             {/* Dropdown */}
             {show && (
-              <div className="bg-[#262626] text-[#979797] w-[220px] absolute top-10 left-0 z-20">
+              <div className="bg-[#262626] text-[#979797] w-[220px] absolute top-10 left-0 z-80">
                 <ul>
                   {[
                     "Accessories",
@@ -85,7 +85,7 @@ const Sharcebar = () => {
               )}
 
               {showl && (
-                <div className="absolute top-10 right-0 z-20">
+                <div className="absolute top-10 right-0 z-80">
                   <ul className="text-sm font-bold font-dmSans">
                     <Link to="/myaccount">
                       <li className="bg-[#2B2B2B] text-white py-2 text-center w-[200px] hover:bg-transparent hover:text-black duration-300">
