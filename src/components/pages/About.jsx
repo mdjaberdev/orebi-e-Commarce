@@ -10,91 +10,108 @@ import { Helmet } from "react-helmet-async";
 
 const About = () => {
   return (
-    <div className="px-3 lg:px-0">
+    <div className="">
       <Helmet>
         <title>Orebi About</title>
         <meta name="About" content="welcome to aboutpage" />
       </Helmet>
+
       <Container>
-        <div className="py-28">
+        {/* Banner */}
+
+        <div className="py-20 lg:py-28">
           <Heading
-            className="text-primary text-5xl font-bold font-dmSans"
+            className="text-primary text-4xl lg:text-5xl font-bold font-dmSans"
             text={"About"}
             as={"h3"}
           />
+
           <Heading
-            className="text-[#767676] text-[12px] font-dmSans"
+            className="text-[#767676] text-[12px] font-dmSans mt-2"
             text={"Home > About"}
             as={"h4"}
           />
         </div>
-        <Flex className="justify-between flex-col lg:flex-row gap-x-6">
-          <div className="lg:w-1/2 relative">
+
+        {/* Images */}
+
+        <Flex className="flex-col lg:flex-row justify-between gap-6">
+          <div className="w-full lg:w-1/2 relative">
             <Images srcImg={aboutOne} className="w-full" />
+
             <Badge
-              className="absolute bottom-15 left-1/2 -translate-x-1/2"
+              className="absolute bottom-6 lg:bottom-15 left-1/2 -translate-x-1/2"
               badgeText="Our Brands"
             />
           </div>
 
-          <div className="lg:w-1/2 relative">
+          <div className="w-full lg:w-1/2 relative">
             <Images srcImg={aboutTwo} className="w-full" />
+
             <Badge
-              className="absolute bottom-15 left-1/2 -translate-x-1/2 "
+              className="absolute bottom-6 lg:bottom-15 left-1/2 -translate-x-1/2"
               badgeText="Our Stores"
             />
           </div>
         </Flex>
+
+        {/* Description */}
+
         <Heading
-          className="mt-5 text-base lg:text-3xl text-primary font-dmSans leading-6 lg:leading-12"
+          className="mt-8 text-base lg:text-3xl text-primary font-dmSans leading-7 lg:leading-12"
           text={
-            " Orebi is one of the worlds leading ecommerce brands and is internationally recognized for celebrating the essence of classic Worldwide cool looking style."
+            "Orebi is one of the worlds leading ecommerce brands and is internationally recognized for celebrating the essence of classic Worldwide cool looking style."
           }
           as={"p"}
         />
-        <Flex className={"gap-x-5 flex-col lg:flex-row items-start mt-2 lg:mt-14"}>
-          <div className="">
+        <Flex className="flex-col lg:flex-row items-start gap-10 lg:gap-x-5 mt-10 lg:mt-14">
+          {/* Our Vision */}
+
+          <div className="w-full">
             <Heading
-              className={"text-primary text-2xl font-bold font-dmSans"}
+              className="text-primary text-2xl font-bold font-dmSans"
               text={"Our Vision"}
               as={"h4"}
             />
+
             <Heading
-              className={
-                "text-[#767676] text-base font-dmSans leading-6 lg:leading-8 lg:w-[400px]"
-              }
+              className="text-[#767676] text-base font-dmSans leading-7 lg:leading-8 w-full lg:w-[400px] mt-3"
               text={
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an   printer took a galley of type and scrambled it to make a type specimen book."
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an printer took a galley of type and scrambled it to make a type specimen book."
               }
               as={"p"}
             />
           </div>
-          <div className="">
+
+          {/* Our Story */}
+
+          <div className="w-full">
             <Heading
-              className={"text-primary text-2xl font-bold font-dmSans"}
+              className="text-primary text-2xl font-bold font-dmSans"
               text={"Our Story"}
               as={"h4"}
             />
+
             <Heading
-              className={
-                "text-[#767676] text-base font-dmSans leading-6 lg:leading-8 lg:w-[400px]"
-              }
+              className="text-[#767676] text-base font-dmSans leading-7 lg:leading-8 w-full lg:w-[400px] mt-3"
               text={
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic."
               }
               as={"p"}
             />
           </div>
-          <div className="">
+
+          {/* Our Brands */}
+
+          <div className="w-full">
             <Heading
-              className={"text-primary text-2xl font-bold font-dmSans"}
+              className="text-primary text-2xl font-bold font-dmSans"
               text={"Our Brands"}
               as={"h4"}
             />
+
             <Heading
-              className={
-                "text-[#767676] text-base font-dmSans leading-8 lg:w-[400px]"
-              }
+              className="text-[#767676] text-base font-dmSans leading-7 lg:leading-8 w-full lg:w-[400px] mt-3"
               text={
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley."
               }
